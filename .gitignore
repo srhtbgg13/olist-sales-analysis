@@ -1,0 +1,5 @@
+data/
+venv/
+migrations_lama/
+__pycache__/
+*.pyc
