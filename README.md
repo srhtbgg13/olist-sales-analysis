@@ -142,15 +142,15 @@ Sumber: *Brazilian E-Commerce Public Dataset by Olist* (Kaggle), berisi data pes
 
 | Tabel di database | File CSV | Isi |
 |---|---|---|
-| `olist_customers` | olist_customers_dataset.csv | Data pelanggan dan lokasi |
-| `olist_orders` | olist_orders_dataset.csv | Pesanan, status, dan tanggal |
-| `olist_order_items` | olist_order_items_dataset.csv | Item per pesanan, harga, ongkos kirim |
-| `olist_order_payments` | olist_order_payments_dataset.csv | Pembayaran per pesanan |
-| `olist_order_reviews` | olist_order_reviews_dataset.csv | Ulasan dan skor pelanggan |
-| `olist_products` | olist_products_dataset.csv | Data produk dan kategori |
-| `olist_sellers` | olist_sellers_dataset.csv | Data penjual |
-| `olist_geolocation` | olist_geolocation_dataset.csv | Koordinat berdasarkan kode pos |
-| `product_category_name_translation` | product_category_name_translation.csv | Terjemahan nama kategori ke bahasa Inggris |
+| olist_customers | olist_customers_dataset.csv | Data pelanggan dan lokasi |
+| olist_orders | olist_orders_dataset.csv | Pesanan, status, dan tanggal |
+| olist_order_items | olist_order_items_dataset.csv | Item per pesanan, harga, ongkos kirim |
+| olist_order_payments | olist_order_payments_dataset.csv | Pembayaran per pesanan |
+| olist_order_reviews | olist_order_reviews_dataset.csv | Ulasan dan skor pelanggan |
+| olist_products | olist_products_dataset.csv | Data produk dan kategori |
+| olist_sellers | olist_sellers_dataset.csv | Data penjual |
+| olist_geolocation | olist_geolocation_dataset.csv | Koordinat berdasarkan kode pos |
+| product_category_name_translation | product_category_name_translation.csv | Terjemahan nama kategori ke bahasa Inggris |
 
 Total **99.441 pesanan** dari 4 September 2016 sampai 17 Oktober 2018. File CSV tidak disertakan di repository ini (lihat `.gitignore`); unduh dari Kaggle dan letakkan di folder `data/`.
 
