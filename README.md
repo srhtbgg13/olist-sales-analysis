@@ -54,11 +54,11 @@ Pendapatan dan jumlah pesanan tumbuh hampir sama besar, sementara rata-rata nila
 
 ### 2. Terdapat Dinamika Pendapatan: tumbuh pesat di 2017, lalu mendatar di 2018
 
-- **2017:** pendapatan naik dari 120.098 (Januari) menjadi 1.003.862 (November), sekitar 8,4 kali lipat.
-- **Puncak November 2017:** 1.003.862 dari 7.421 pesanan, naik 52,1% dari Oktober, lalu turun 26,1% di Desember. Lonjakan ini bertepatan dengan **Black Friday (24 November 2017)**: pada hari itu tercatat 1.176 pesanan, sekitar 2,4 kali lipat hari tertinggi berikutnya (499 pesanan pada 25 November). Karena puncak ini didorong oleh satu peristiwa, November 2017 tidak mencerminkan tren dasar. Pendapatan Desember (742.184) dan Januari 2018 (945.456) tetap berada di atas level Oktober 2017 (660.180), sehingga level penjualan tidak kembali ke posisi sebelum puncak.
-- **2018:** pendapatan bulanan bergerak di kisaran 838 ribu sampai 994 ribu dan tidak pernah melampaui puncak November 2017.
-- **Setelah Mei 2018:** jumlah pesanan turun dari 6.833 (Mei) menjadi 6.145 (Juni) dan bertahan di kisaran 6.100 sampai 6.400. Rata-rata nilai per pesanan relatif stabil, sehingga penurunan pendapatan lebih mungkin berasal dari berkurangnya jumlah transaksi.
-- **Pola Juni:** pendapatan turun di Juni 2017 (-14,6%) dan Juni 2018 (-13,1%). Dengan hanya dua tahun data, ini belum cukup untuk disebut pola musiman.
+- Pada tahun 2017 pendapatan naik dari 120.098 (Januari) menjadi 1.003.862 (November), sekitar 8,4 kali lipat.
+- Pada puncak November 2017, 1.003.862 dari 7.421 pesanan, naik 52,1% dari Oktober, lalu turun 26,1% di Desember. Lonjakan ini bertepatan dengan **Black Friday (24 November 2017)**: pada hari itu tercatat 1.176 pesanan, sekitar 2,4 kali lipat hari tertinggi berikutnya (499 pesanan pada 25 November). Karena puncak ini didorong oleh satu peristiwa, November 2017 tidak mencerminkan tren dasar. Pendapatan Desember (742.184) dan Januari 2018 (945.456) tetap berada di atas level Oktober 2017 (660.180), sehingga level penjualan tidak kembali ke posisi sebelum puncak.
+- Pada tahun 2018, pendapatan bulanan bergerak di kisaran 838 ribu sampai 994 ribu dan tidak pernah melampaui puncak November 2017.
+- Periode setelah Mei 2018, jumlah pesanan turun dari 6.833 (Mei) menjadi 6.145 (Juni) dan bertahan di kisaran 6.100 sampai 6.400. Rata-rata nilai per pesanan relatif stabil, sehingga penurunan pendapatan lebih mungkin berasal dari berkurangnya jumlah transaksi.
+- Terdapatpat pola dibulan Juni, pendapatan turun di Juni 2017 (-14,6%) dan Juni 2018 (-13,1%). Dengan hanya dua tahun data, ini belum cukup untuk disebut pola musiman.
 
 <details>
 <summary>Lihat tabel pendapatan per bulan (Jan 2017 sampai Agu 2018)</summary>
@@ -89,7 +89,7 @@ Pendapatan dan jumlah pesanan tumbuh hampir sama besar, sementara rata-rata nila
 </details>
 
 #### Kategori pendorong lonjakan November 2017
-Pendapatan naik 343.683 dari Oktober ke November 2017 (+52,1%). Kenaikan ini tersebar di banyak kategori sekaligus: sepuluh kategori teratas menyumbang 78,6% dari kenaikan, sedangkan kategori terbesar (`bed_bath_table`) hanya menyumbang 12,5%.
+Pendapatan naik 343.683 dari Oktober ke November 2017 (+52,1%). Kenaikan ini tersebar di banyak kategori sekaligus: sepuluh kategori teratas menyumbang 78,6% dari kenaikan, sedangkan kategori terbesar ('bed_bath_table') hanya menyumbang 12,5%.
 
 | Kategori | Okt 2017 | Nov 2017 | Kenaikan | Kontribusi ke kenaikan | Perubahan |
 |---|---:|---:|---:|---:|---:|
@@ -104,9 +104,9 @@ Pendapatan naik 343.683 dari Oktober ke November 2017 (+52,1%). Kenaikan ini ter
 | perfumery | 16.894,72 | 31.831,81 | 14.937,09 | 4,3% | +88,4% |
 | sports_leisure | 49.611,45 | 63.730,92 | 14.119,47 | 4,1% | +28,5% |
 
-- Kategori perlengkapan rumah (`housewares`, `furniture_decor`, `bed_bath_table`) naik paling tajam, sekitar dua kali lipat (+93% sampai +116%).
-- `toys` hanya peringkat 11 dalam pendapatan keseluruhan, tetapi peringkat 5 dalam kontribusi kenaikan, sehingga tampak lebih sensitif terhadap momen belanja akhir tahun.
-- `watches_gifts` dan `sports_leisure` naik di bawah rata-rata keseluruhan (+52,1%); keduanya sudah memiliki basis Oktober yang relatif tinggi.
+- Kategori perlengkapan rumah (housewares, furniture_decor, bed_bath_table) (naik paling tajam, sekitar dua kali lipat (+93% sampai +116%).
+- Kolom "toys" hanya peringkat 11 dalam pendapatan keseluruhan, tetapi peringkat 5 dalam kontribusi kenaikan, sehingga tampak lebih sensitif terhadap momen belanja akhir tahun.
+- Kolom watches_gifts dan sports_leisure naik di bawah rata-rata keseluruhan (+52,1%); keduanya sudah memiliki basis Oktober yang relatif tinggi.
 - Kenaikan serentak di banyak kategori sejalan dengan lonjakan pesanan pada 24 November 2017 (Black Friday), yaitu 1.176 pesanan dalam satu hari. Ini menunjukkan faktor yang berlaku untuk seluruh toko, bukan tren satu kategori. Data tidak memuat detail promosi, sehingga rinciannya (diskon, kategori yang dipromosikan) tidak bisa dipastikan.
 
 ### 3. Pendapatan tersebar di banyak kategori, tidak didominasi satu kategori
