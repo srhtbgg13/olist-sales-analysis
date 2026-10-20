@@ -124,11 +124,11 @@ Pendapatan naik 343.683 dari Oktober ke November 2017 (+52,1%). Kenaikan ini ter
 | 9 | auto | 4.195 | 585.177 | 4,4% | 58,8% | 139,5 |
 | 10 | garden_tools | 4.323 | 479.650 | 3,6% | 62,4% | 111,0 |
 
-- Kategori terbesar hanya menyumbang **9,3%**. Lima kategori teratas menyumbang 39,9%, sepuluh teratas 62,4%, dan **tujuh kategori teratas hampir tepat separuh (49,9%)**. Prinsip 80/20 tidak terlalu kuat di sini: dibutuhkan 15 kategori untuk mencapai 76,3%.
-- **Peringkat volume dan peringkat pendapatan berbeda.** `bed_bath_table` paling banyak terjual (11.089 item) tetapi hanya peringkat 3 dalam pendapatan, sedangkan `watches_gifts` peringkat 2 dalam pendapatan dengan hanya 5.965 item karena harga rata-ratanya sekitar dua kali lipat (200,3 berbanding 93,4).
-- Kategori berharga tinggi dengan volume kecil, seperti `cool_stuff` (164,3) dan `office_furniture` (161,7), efisien dari sisi pendapatan per item. Sebaliknya `telephony` (71,3) volumenya cukup besar tetapi kontribusinya hanya 2,4%.
+- **Kategori terbesar hanya menyumbang 9,3%,** terdapat lima kategori teratas menyumbang 39,9%, sepuluh teratas 62,4%, dan tujuh kategori teratas hampir tepat separuh (49,9%). Prinsip 80/20 tidak terlalu kuat di sini: dibutuhkan 15 kategori untuk mencapai 76,3%.
+- **Peringkat volume dan peringkat pendapatan berbeda.** "bed_bath_table" paling banyak terjual (11.089 item) tetapi hanya peringkat 3 dalam pendapatan, sedangkan "watches_gifts" peringkat 2 dalam pendapatan dengan hanya 5.965 item karena harga rata-ratanya sekitar dua kali lipat (200,3 berbanding 93,4).
+- Kategori berharga tinggi dengan volume kecil, seperti "cool_stuff" (164,3) dan "office_furniture" (161,7), efisien dari sisi pendapatan per item. Sebaliknya "telephony" (71,3) volumenya cukup besar tetapi kontribusinya hanya 2,4%.
 
-**Catatan:** penyebab di balik pola-pola di atas (misalnya faktor promosi atau musiman) adalah dugaan. Data hanya menunjukkan **apa** yang terjadi, bukan **mengapa**, sehingga diperlukan data tambahan atau analisis lanjutan untuk memastikannya.
+**Catatan:** penyebab di balik pola-pola di atas (misalnya faktor promosi atau musiman) adalah dugaan. Data hanya menunjukkan apa yang terjadi bukan mengapa, sehingga diperlukan data tambahan atau analisis lanjutan untuk memastikannya.
 
 ## Dashboard
 
@@ -224,24 +224,24 @@ erDiagram
 
 Keputusan desain yang perlu diketahui:
 
-- **`olist_order_reviews` dan `olist_geolocation` memakai `id` sendiri** sebagai primary key, karena `review_id` tidak unik di data asli dan satu kode pos punya banyak baris koordinat.
-- **Tidak ada foreign key ke `olist_geolocation` dan ke tabel terjemahan kategori**, karena kode pos tidak unik di geolocation dan sebagian kategori produk tidak punya terjemahan. Tabel-tabel ini dihubungkan lewat `JOIN` biasa (`LEFT JOIN` untuk terjemahan).
-- Kolom `product_name_lenght` dan `product_description_lenght` di CSV asli (typo dari sumber data) diperbaiki menjadi `product_name_length` dan `product_description_length` di database.
-- Kode pos disimpan sebagai `CHAR(5)` agar angka nol di depan (misalnya `01037`) tidak hilang.
+- Table olist_order_reviews dan olist_geolocation memakai id sendiri sebagai primary key, karena kolom review_id tidak unik di data asli dan satu kode pos punya banyak baris koordinat.
+- Tidak ada foreign key ke tabel olist_geolocation dan ke tabel terjemahan kategori, karena kode pos tidak unik di geolocation dan sebagian kategori produk tidak punya terjemahan. Tabel-tabel ini dihubungkan lewat JOIN biasa (LEFT JOIN untuk terjemahan).
+- Kolom product_name_lenght dan product_description_lenght di CSV asli (typo dari sumber data) diperbaiki menjadi product_name_length dan product_description_length di database.
+- Kode pos disimpan sebagai CHAR(5) agar angka nol di depan (misalnya 01037) tidak hilang.
 
 ## Metodologi dan Keputusan Analisis
 
-- **Definisi pendapatan:** `SUM(price)` dari `olist_order_items`, yaitu nilai penjualan produk tanpa ongkos kirim.
-- **Pesanan yang dikeluarkan:** status `canceled` dan `unavailable`, karena tidak menghasilkan pendapatan.
-- **Tidak menggabungkan `order_items` dengan `order_payments` dalam satu query.** Satu pesanan bisa memiliki beberapa baris pembayaran, sehingga `price` akan terhitung berkali-kali dan pendapatan menjadi membengkak.
-- **Pertumbuhan bulanan** dihitung dengan window function `LAG()`. Filter periode ditaruh di `SELECT` akhir (bukan di dalam CTE) supaya bulan pertama tidak dibandingkan dengan bulan di luar cakupan.
-- **Nama kategori** diterjemahkan lewat `LEFT JOIN` ke tabel terjemahan. Produk tanpa kategori atau tanpa terjemahan tetap dihitung dengan label `tidak_diketahui` atau nama aslinya.
-- **Identifikasi pelanggan:** `customer_id` dibuat baru untuk setiap pesanan. Untuk mengenali pelanggan yang sama, gunakan `customer_unique_id`.
+- **Definisi pendapatan:** SUM(price) dari olist_order_items, yaitu nilai penjualan produk tanpa ongkos kirim.
+- **Pesanan yang dikeluarkan:** status CANCELED dan UNAVAIABLE, karena tidak menghasilkan pendapatan.
+- **Tidak menggabungkan tabel order_items dengan order_payments dalam satu query.** Satu pesanan bisa memiliki beberapa baris pembayaran, sehingga kolom "price" akan terhitung berkali-kali dan pendapatan menjadi membengkak.
+- **Pertumbuhan bulanan** dihitung dengan window function LAG(). Filter periode ditaruh di SELECT akhir (bukan di dalam CTE) supaya bulan pertama tidak dibandingkan dengan bulan di luar cakupan.
+- **Nama kategori** diterjemahkan lewat LEFT JOIN ke tabel terjemahan. Produk tanpa kategori atau tanpa terjemahan tetap dihitung dengan label "tidak_diketahui" atau nama aslinya.
+- **Identifikasi pelanggan:** kolom customer_id dibuat baru untuk setiap pesanan. Untuk mengenali pelanggan yang sama, menngunakan kolom customer_unique_id.
 
 ## Keterbatasan Data
 
 - **Data awal sangat sedikit.** September sampai Desember 2016 hanya berisi 2, 290, dan 1 pesanan, dan November 2016 tidak memiliki data sama sekali. Bulan-bulan ini dikeluarkan dari analisis tren.
-- **Data akhir tidak lengkap.** September 2018 berisi 15 pesanan `canceled` dan 1 `shipped`; Oktober 2018 hanya 4 pesanan `canceled`. Bulan-bulan ini dikeluarkan karena tidak mewakili aktivitas penuh.
+- **Data akhir tidak lengkap.** Pada september 2018 berisi 15 pesanan canceled dan 1 shipped lalu, Oktober 2018 hanya 4 pesanan canceled. Bulan-bulan ini dikeluarkan karena tidak mewakili aktivitas penuh.
 - **Pertumbuhan persentase di awal periode tidak bermakna** (misalnya lonjakan ribuan persen di Januari 2017 jika dibandingkan dengan Desember 2016), karena basisnya sangat kecil. Karena itu pertumbuhan bulanan dihitung mulai Februari 2017.
 - **Hanya dua tahun data** (dan baru 20 bulan penuh), sehingga pola musiman belum bisa disimpulkan.
 - **Pendapatan tidak mencakup ongkos kirim**, dan "item terjual" menghitung item, bukan pesanan.
