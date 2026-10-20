@@ -24,17 +24,16 @@ Proyek ini merupakan proyek analitik end-to-end berbasis dataset e-commerce Olis
 ## Ringkasan
 Pengolahan data mentah menggunakan format CSV secara berulang memiliki keterbatasan dari segi efisiensi dan konsistensi. Proyek ini memindahkan seluruh dataset ke database relasional PostgreSQL melalui pipeline terstruktur yang dapat dijalankan ulang (reproducible) dari awal kapan saja.
 
-- **Skema database terversi:** menggunakan Alembic sehingga setiap perubahan struktur tercatat sebagai migration.
+- Skema database terversi: menggunakan Alembic sehingga setiap perubahan struktur tercatat sebagai migration.
 
-- **Pemuatan data otomatis:** menggunakan skrip Python (`load_olist.py`): CSV dimuat ke tabel staging, dikonversi tipenya, lalu dimasukkan ke tabel final. Skrip aman dijalankan berulang dan memvalidasi jumlah baris di setiap tabel.
+- Pemuatan data otomatis: menggunakan skrip Python (`load_olist.py`): CSV dimuat ke tabel staging, dikonversi tipenya, lalu dimasukkan ke tabel final. Skrip aman dijalankan berulang dan memvalidasi jumlah baris di setiap tabel.
 
-- **Analisis SQL:** query didokumentasikan di folder `sql/` yang mencakup pertanyaan bisnis, definisi metrik, dan cakupan data di setiap file.
+- Analisis SQL: query didokumentasikan di folder `sql/` yang mencakup pertanyaan bisnis, definisi metrik, dan cakupan data di setiap file.
 
-- **Dashboard:** dashboard Metabase yang terhubung langsung ke database (lihat bagian [Dashboard](#dashboard)).
+- Dashboard: dashboard Metabase yang terhubung langsung ke database (lihat bagian [Dashboard](#dashboard)).
 
 ## Pertanyaan Bisnis
 > **Bagaimana tren pendapatan bulanan, dan kategori produk apa yang menyumbang paling besar?**
-
 Untuk menjawab pertanyaan utama tersebut, analisis dibagi ke dalam dua fokus berikut:
 1. Bagaimana arah pendapatan dari bulan ke bulan, kapan puncaknya, dan apakah pertumbuhannya berasal dari volume pesanan atau nilai per pesanan?
 2. Kategori produk apa yang menyumbang pendapatan terbesar, dan seberapa terkonsentrasi pendapatannya?
